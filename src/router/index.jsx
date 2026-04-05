@@ -9,7 +9,10 @@ import NotFound from "../pages/notFound/NotFound";
 
 export const router = createBrowserRouter([
     {path: "/", element: <Layout />, children: [
-        {index: true, element: <Home />},
+        {index: true, element: <Home />, loader: async () => {
+            store.dispatch(fetchMovies())
+            return null
+        }},
         {path: "movies", element: <MoviePage />, loader: async () => {
             store.dispatch(fetchMovies())
             return null

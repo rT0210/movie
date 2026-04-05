@@ -4,7 +4,9 @@ const SearchMovie = ({ query, changeQuery, movie, resetQuery }) => {
   const filterQuery = movie.filter((mov) =>
     mov.title.toLowerCase().includes(query.toLowerCase()),
   );
-  console.log(filterQuery);
+  const [year] = movie[0].release_date.split("-")
+  console.log(year);
+  
   return (
     <div className="relative flex-1 flex-col hidden md:flex mx-4">
       <input
@@ -17,10 +19,21 @@ const SearchMovie = ({ query, changeQuery, movie, resetQuery }) => {
       {filterQuery.length > 0 && query.length > 2 ? (
         <div className="absolute top-10 text-left  bg-gray-500 text-white rounded left-0 right-0 px-4">
           <p>Возможно вы имели в виду:</p>
-          <ul>
+          <ul className="py-4">
             {filterQuery.map((mov) => (
               <li key={mov.id}>
-                <Link to={`movies/${mov.id}`} onClick={resetQuery}>{mov.title}</Link>
+                <Link to={`/movies/${mov.id}`} onClick={resetQuery} className="flex gap-2">
+                    <img className="w-20 h-30" src={`https://image.tmdb.org/t/p/original${mov.poster_path}`} alt="" />
+                    <div className="flex flex-col justify-center gap-4">
+                        <p className="text-black font-bold">{mov.title}</p>
+                        <div className="flex gap-2">
+                            <p className={`${+mov.vote_average >= 7.5 ? "text-green-600" : "text-orange-600"}`}>{mov.vote_average}</p>
+                            <p>{mov.release_date.slice(0, 4)}</p>
+                        </div>
+                        
+                    </div>
+                    
+                </Link>
               </li>
             ))}
           </ul>

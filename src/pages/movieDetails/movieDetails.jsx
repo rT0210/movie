@@ -9,7 +9,7 @@ import MovieDetrailsSliderSection from "../../components/movieDetailsContent/mov
 const MovieDetails = () => {
   const { movieId } = useParams();
   const dispatch = useDispatch();
-  
+
   const movie = useSelector((state) => state.movies.currentMovie);
   const movieTrailer = useSelector((state) => state.movies.trailers);
   const { cast, crew } = useSelector((state) => state.movies.currentActors);
