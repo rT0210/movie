@@ -26,9 +26,9 @@ const Header = () => {
         </Link>
         <SearchMovie query={query} changeQuery={changeQuery} movie={movie} resetQuery={resetQuery}/>
         <Nav>
+          <NavLink to={"/"}>главная</NavLink>
           <NavLink to={"/movies"}>фильмы</NavLink>
-          <NavLink>о сайте2</NavLink>
-          <NavLink>о сайте3</NavLink>
+          <NavLink to={"/movies/favorites"}>избранное</NavLink>
         </Nav>
       </div>
     </header>

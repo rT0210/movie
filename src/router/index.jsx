@@ -6,6 +6,7 @@ import { store } from "../store";
 import { detailsMovie, fetchMovies, movieActors, trailerMovie } from "../store/moviesSlice/moviesSlice";
 import MovieDetails from "../pages/movieDetails/movieDetails";
 import NotFound from "../pages/notFound/NotFound";
+import MovieFavorites from "../pages/movieFavorites/MovieFavorites";
 
 export const router = createBrowserRouter([
     {path: "/", element: <Layout />, children: [
@@ -23,6 +24,10 @@ export const router = createBrowserRouter([
                 store.dispatch(trailerMovie(params.movieId)),
                 store.dispatch(movieActors(params.movieId))
             ])
+            return null
+        }},
+        {path: "movies/favorites", element: <MovieFavorites />, loader: async () => {
+            store.dispatch(fetchMovies())
             return null
         }},
         {path: "*", element: <NotFound />}

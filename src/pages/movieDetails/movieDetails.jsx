@@ -12,10 +12,10 @@ const MovieDetails = () => {
 
   const movie = useSelector((state) => state.movies.currentMovie);
   const movieTrailer = useSelector((state) => state.movies.trailers);
-  const { cast, crew } = useSelector((state) => state.movies.currentActors);
+  const { cast } = useSelector((state) => state.movies.currentActors);
 
   const trailer = movieTrailer.find((video) => video.type === "Trailer");
-  const director = crew.find((people) => people.job === "Director");
+  /* const director = crew.find((people) => people.job === "Director"); */
 
   useEffect(() => {
     dispatch(detailsMovie(movieId));
@@ -31,7 +31,7 @@ const MovieDetails = () => {
         backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`,
       }}
     >
-      <div className="max-w-7xl mx-auto min-h-screen flex flex-col p-4">
+      <div className="max-w-7xl mx-auto min-h-screen flex flex-col px-4">
         <MovieDetailsFirstSection movie={movie} />
         <MovieDetailsTrailerSection movie={movie} trailer={trailer} />
         <MovieDetrailsSliderSection cast={cast} />

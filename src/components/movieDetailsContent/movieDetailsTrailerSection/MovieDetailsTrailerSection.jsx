@@ -1,8 +1,9 @@
 const MovieDetailsTrailerSection = ({ movie, trailer }) => {
-  if (!trailer) {
+  console.log(typeof trailer);
+  if (typeof trailer === "undefined" || !trailer) {
     return (
-      <div className="flex">
-        <p>Трейлер не доступен....</p>
+      <div className="flex justify-center bg-white min-h-16">
+        <p className="text-[20px]">Трейлер не доступен....</p>
       </div>
     );
   }

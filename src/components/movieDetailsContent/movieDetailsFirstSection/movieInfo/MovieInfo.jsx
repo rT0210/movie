@@ -2,12 +2,12 @@ const MovieInfo = ({ movie }) => {
   const [year] = movie.release_date.split("-");
   return (
     <div className="flex flex-col gap-4">
-      <h1 className="text-2xl md:text-3xl font-bold text-center md:mb-20 lg:text-5xl">
+      <h1 className="text-2xl md:text-3xl font-bold text-center md:mb-8 lg:text-5xl">
         {movie.title}({year})
       </h1>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 mt-auto">
         <h2 className="text-3xl text-center">О фильме</h2>
-        <div className="flex gap-4 justify-between text-[10px] md:text-[16px] lg:text-[20px]">
+        <div className="flex gap-4 justify-around text-[10px] md:text-[16px] lg:text-[20px]">
           {" "}
           <div className="text-gray-500">
             <ul>

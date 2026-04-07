@@ -1,4 +1,6 @@
-const MovieGenres = ({ genres}) => {
+import MovieFavorites from "../movieFavorites/MovieFavoritesBtn";
+
+const MovieGenres = ({ genres }) => {
   return (
     <div className="flex justify-center w-full text-white">
       <ul className="flex md:flex-col justify-around w-full gap-4 text-center flex-wrap">
