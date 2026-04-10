@@ -38,7 +38,7 @@ const MoviePage = () => {
   
   return (
     <div className="max-w-7xl mx-auto p-2 bg-white">
-      <div className="h-10 flex justify-around">
+      <div className="h-10 flex justify-between md:justify-around mb-4">
         <Button onClick={movieVotesFilter}>По оценке</Button>
         <Button onClick={moviePopularityFilter}>По популярности</Button>
         <Button onClick={movieDefaultFilter}>Сброс</Button>

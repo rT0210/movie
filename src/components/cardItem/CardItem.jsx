@@ -1,13 +1,13 @@
 import Button from "../button/Button";
 
-const CardItem = ({ title, releaseDate, img, vote }) => {
+const CardItem = ({ title, releaseDate, img, vote, width = "w-full"}) => {
   const [year] = releaseDate.split("-");
 
   return (
     <>
       <div className="flex flex-col items-center relative cursor-pointer hover:brightness-50 transition-all">
         <img
-          className="w-full h-70 rounded"
+          className={`${width} h-70 rounded`}
           src={`https://image.tmdb.org/t/p/w200${img}`}
           alt="постер фильма"
         />

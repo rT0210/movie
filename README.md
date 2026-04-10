@@ -1,16 +1,24 @@
-# React + Vite
+# 🎬 MovieDB — кино-портал на React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Кино-портал с поиском, трейлерами, актёрским составом и избранным.
 
-Currently, two official plugins are available:
+## Технологии
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+React 18, Redux Toolkit, React Router v6, Tailwind CSS, TMDB API, Vite
 
-## React Compiler
+## Функционал
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🔍 Поиск фильмов с автодополнением
+- 🎥 Трейлеры с YouTube
+- 🎭 Актёрский состав (слайдер)
+- ⭐ Избранное (Redux)
+- 🎲 Рандомный фильм на главной
 
-## Expanding the ESLint configuration
+## Установка
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+git clone https://github.com/твой-ник/movie-db.git
+cd movie-db
+npm i
+npm run dev
+```
