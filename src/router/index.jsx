@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import Layout from "../components/layout/Layout";
 import Home from "../pages/home/Home";
 import MoviePage from "../pages/moviesPage/MoviePage";
@@ -8,7 +8,7 @@ import MovieDetails from "../pages/movieDetails/movieDetails";
 import NotFound from "../pages/notFound/NotFound";
 import MovieFavorites from "../pages/movieFavorites/MovieFavorites";
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
     {path: "/", element: <Layout />, children: [
         {index: true, element: <Home />, loader: async () => {
             store.dispatch(fetchMovies())
