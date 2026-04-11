@@ -22,3 +22,5 @@ cd movie-db
 npm i
 npm run dev
 ```
+
+**[👉 Смотреть демо](https://rT0210.github.io/movie)**
