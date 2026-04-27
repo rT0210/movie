@@ -13,8 +13,8 @@ const MovieFavorites = () => {
     dispatch(delFavorite(value));
   };
   return (
-    <div className="bg-white min-h-screen">
-      <div className="max-w-7xl mx-auto bg-black min-h-screen p-4">
+    <div className="bg-white ">
+      <div className="max-w-7xl mx-auto bg-black p-4">
         {favorites.length > 0 ? (
           <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-2">
             {favorites?.map((value) => (
@@ -39,7 +39,7 @@ const MovieFavorites = () => {
             ))}
           </div>
         ) : (
-          <div className="flex justify-center items-center w-full min-h-screen">
+          <div className="flex justify-center items-center w-full min-h-[calc(100vh-144px)]">
             <p className="text-white">пока не добавлено ни одного фильма!</p>
           </div>
         )}

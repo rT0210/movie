@@ -29,8 +29,8 @@ const MoviePage = () => {
   
   if(movie.length < 1) {
     return (
-      <div className="max-w-7xl mx-auto p-2 bg-white flex justify-center items-center h-screen">
-        <p className="text-7xl">Loading...</p>
+      <div className="max-w-7xl mx-auto p-2 bg-white flex justify-center items-center min-h-[calc(100vh-112px)]">
+        <img src="/img/loading.png" alt="loading" />
       </div>
     )
   }
