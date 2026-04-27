@@ -27,7 +27,7 @@ const Home = () => {
       </p>
       {isLoading ? (
         <div className="w-75 h-75 flex justify-center items-center">
-          <img className="w-30 h-30" src={`${base}img/loading.png`} alt="" />
+          <img className="w-30 h-30" src={`${base}img/loading.png`} alt="loading..." />
         </div>
       ) : (
         movie.length > 0 &&
