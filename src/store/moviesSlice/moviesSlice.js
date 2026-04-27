@@ -2,6 +2,14 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const API_KEY = "478bc596d85373c1571f5120040af542";
 
+const PROXY_URL = "https://bold-hall-9b8a.r1plcops.workers.dev";
+
+const fetchWithProxy = async (originalUrl) => {
+  const res = await fetch(`${PROXY_URL}/?url=${encodeURIComponent(originalUrl)}`);
+  if (!res.ok) throw new Error(`Ошибка ${res.status}`);
+  return res.json();
+};
+
 const initialState = {
   movies: [],
   loading: false,
@@ -13,29 +21,22 @@ const initialState = {
 };
 
 export const fetchMovies = createAsyncThunk("movies/fetch", async () => {
-  const res = await fetch(
+  const res = await fetchWithProxy(
     `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=ru-RU`,
   );
-  const data = await res.json();
-  return data.results;
+  return res.results
 });
 
 export const detailsMovie = createAsyncThunk("movies/details", async (movieId) => {
-  const res = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}`)
-  const data = await res.json()
-  return data
+  return await fetchWithProxy(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}`)
 })
 
 export const trailerMovie = createAsyncThunk("movie/trailer", async (movieId) => {
-  const res = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${API_KEY}`)
-  const data = await res.json()
-  return data
+  return await fetchWithProxy(`https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${API_KEY}`)
 })
 
 export const movieActors = createAsyncThunk("movie/actors", async (movieId) => {
-  const res = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${API_KEY}`)
-  const data = await res.json()
-  return data
+  return await fetchWithProxy(`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${API_KEY}`)
 })
 
 const moviesSlice = createSlice({

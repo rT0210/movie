@@ -3,7 +3,7 @@ const MoviePoster = ({posterPath}) => {
     <div className="flex flex-col gap-2">
       <img
         className="w-full h-100 md:h-78 lg:h-100 rounded"
-        src={`https://image.tmdb.org/t/p/original${posterPath}`}
+        src={`https://bold-hall-9b8a.r1plcops.workers.dev/t/p/original${posterPath}`}
         alt="movie"
       />
     </div>

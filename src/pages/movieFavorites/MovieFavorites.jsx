@@ -13,8 +13,8 @@ const MovieFavorites = () => {
     dispatch(delFavorite(value));
   };
   return (
-    <div className="bg-white ">
-      <div className="max-w-7xl mx-auto bg-black p-4">
+    <div className="bg-white">
+      <div className="max-w-7xl mx-auto bg-black p-4 min-h-[calc(100vh-112px)]">
         {favorites.length > 0 ? (
           <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-2">
             {favorites?.map((value) => (

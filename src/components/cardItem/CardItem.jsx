@@ -8,7 +8,7 @@ const CardItem = ({ title, releaseDate, img, vote, width = "w-full"}) => {
       <div className="flex flex-col items-center relative cursor-pointer hover:brightness-50 transition-all">
         <img
           className={`${width} h-70 rounded`}
-          src={`https://image.tmdb.org/t/p/w200${img}`}
+          src={`https://bold-hall-9b8a.r1plcops.workers.dev/t/p/w200${img}`}
           alt="постер фильма"
         />
         <div className="absolute top-4 left-4 bg-emerald-500 rounded w-10 h-6 flex justify-center">

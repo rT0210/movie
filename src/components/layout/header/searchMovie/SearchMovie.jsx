@@ -27,7 +27,7 @@ const SearchMovie = ({ query, changeQuery, movie, resetQuery }) => {
                 >
                   <img
                     className="w-20 h-30"
-                    src={`https://image.tmdb.org/t/p/original${mov.poster_path}`}
+                    src={`https://bold-hall-9b8a.r1plcops.workers.dev/t/p/original${mov.poster_path}`}
                     alt=""
                   />
                   <div className="flex flex-col justify-center gap-4">
