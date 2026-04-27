@@ -1,6 +1,7 @@
 const NavigationButton = ({ disabled, onClick, direction }) => {
+  const base = import.meta.env.BASE_URL
   const imageArrow =
-    direction === "left" ? "/img/left-arrow.png" : "/img/right-arrow.png";
+    direction === "left" ? `${base}img/left-arrow.png` : `${base}img/right-arrow.png`;
   const currentClassName =
     direction === "left"
       ? "w-10 h-10 absolute top-10 left-0 md:left-[10%] lg:left-4 lg:top-12.5"

@@ -8,6 +8,7 @@ const Home = () => {
   const [randomIndex, setRandomIndex] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const movie = useSelector((state) => state.movies.movies);
+  const base = import.meta.BASE_UTL
   const randomFilm = () => {
     const randomNumber = Math.floor(Math.random() * movie.length);
     setIsLoading(true);
@@ -26,7 +27,7 @@ const Home = () => {
       </p>
       {isLoading ? (
         <div className="w-75 h-75 flex justify-center items-center">
-          <img className="w-30 h-30" src="/img/loading.png" alt="" />
+          <img className="w-30 h-30" src={`${base}img/loading.png`} alt="" />
         </div>
       ) : (
         movie.length > 0 &&
